@@ -1,0 +1,124 @@
+.del-025 {
+	-o-animation-delay: 0.25s;
+	-ms-animation-delay: 0.25s;
+	-webkit-animation-delay: 0.25s;
+	-moz-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+}
+
+.del-05 {
+	-o-animation-delay: 0.5s;
+	-ms-animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+.del-075 {
+	-o-animation-delay: 0.75s;
+	-ms-animation-delay: 0.75s;
+	-webkit-animation-delay: 0.75s;
+	-moz-animation-delay: 0.75s;
+	animation-delay: 0.75s;
+}
+
+.del-10 {
+	-o-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.del-15 {
+	-o-animation-delay: 1.5s;
+	-ms-animation-delay: 1.5s;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.del-20 {
+	-o-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+.del-25 {
+	-o-animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
+.fast {
+	-o-animation-duration: 0.5s;
+	-ms-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+}
+
+.medium {
+	-o-animation-duration: 1.25s;
+	-ms-animation-duration: 1.25s;
+	-moz-animation-duration: 1.25s;
+	-webkit-animation-duration: 1.25s;
+	animation-duration: 1.25s;
+}
+
+.slow {
+	-o-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+.landing-home h3,
+.landing-home h1,
+.landing-home p {
+	text-shadow: 1px 1px 1px #505050;
+}
+
+.highlighted-bg {
+	background-color: #333;	
+}
+
+.next-event {
+	padding: 20px;	
+}
+
+.bg-dark h2, .bg-dark .h2,
+.bg-dark h3, .bg-dark .h3,
+.bg-dark h4, .bg-dark .h4,
+.bg-dark h5, .bg-dark .h5,
+.bg-dark h6, .bg-dark .h6
+{
+	color: #fbfcfc;
+}
+
+.event-content p {
+	margin: 5px 0px;
+}
+
+.event-content p i {
+	margin-right: 5px;
+}
+
+.event-title-date {
+	font-size: 14px;
+	font-family: Lato;
+	font-weight: 100;
+}
+
+.web-link {
+	
+}
+
+.web-link .title-icon {
+	color: #707070;
+}
