@@ -1,2 +1,13 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "custom";
+
+$boss-gray : #505050;
+$boss-light : #f2f2f2;
+$boss-text-gray : #9a9a9a;
+$boss-color : #1B778C;
+
+@import "angular-toastr/dist/angular-toastr.min";
+
+@import "common/uib-modal";
+@import "views/events-section";
 

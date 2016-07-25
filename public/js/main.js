@@ -98,12 +98,14 @@
 		queryLoad: function () {
 			var self = this;
 			if ($.fn.queryLoader2) {
+
 				$("body").queryLoader2({
 					barColor: "#2a2a2a",
 					backgroundColor: "rgba(255, 255, 255, 0.1)",
 					percentage: true,
 					barHeight: 2,
 					minimumTime: 400,
+					maxTime: 1000,
 					fadeOutTime:200,
 					onComplete: function() {
 						/* fadeout then remove loader*/
@@ -1996,7 +1998,8 @@
 
 	};
 
-	Boss.init();
+	Boss.queryLoad();
+	window.Boss = Boss;
 
 	// Load Event
 	$(window).on('load', function() {

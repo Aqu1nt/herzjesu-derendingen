@@ -1,0 +1,56 @@
+<section class="section landing-services-section bg-dark" id="events" ng-controller="EventsSectionController as evCtrl">
+    <header class="section-header container mb40 text-center">
+        <span class="btn pull-right btn-dark wow fadeIn" uib-tooltip="Anlass hinzufügen"
+              ng-show="homeCtrl.loggedIn" ng-click="evCtrl.newEvent()" btn-right>
+            <i class="fa fa-plus fa-before"></i> Neu
+        </span>
+        <h2 class="section-title title-underblock white normal text-white" style="display: inline-block">Anlässe</h2>
+        <p class="text-darkgray">Hier finden Sie all unsere Anlässe, Sie sind herzlich eingeladen teilzunehmen.</p>
+    </header>
+    <div class="container mb30">
+        <div class="row">
+            <div class="next-event highlighted-bg col-md-4 wow bounceIn del-025">
+                <h6 class="third-color">In 3 Tagen - Samstag</h6>
+                <h2 class="title-underblock dark mb30">Taufe Fritzli</h2>
+                <div class="event">
+                    <div class="event-content">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta optio natus ducimus est in, enim, quam obcaecati quia commodi hic incidunt.
+                        </p>
+
+                        <p class="third-color event-date"><i class="icon-calendar"></i> 10.12.2015</p>
+                        <p class="third-color event-time"><i class="icon-clock"></i> 13:00 - 16:30</p>
+                        <p class="third-color event-location"><i class="icon-location-pin"></i> Kirche Derendingen</p>
+
+                    </div><!-- End .event-content -->
+
+                </div><!-- End .event -->
+            </div>
+            <div class="mb30 visible-xs visible-sm"></div><!--space -->
+
+            <div class="other-events col-md-8">
+                <h4 class="title-underblock dark bg-dark mb30">Weitere</h4>
+                <div class="owl-carousel events-slider">
+                    <div class="event fast wow fadeInRight vertical" ng-repeat="i in [1,2,3,4,5,6,7,8,9]">
+                        <div class="event-content">
+                            <h4 class="event-title text-white text-uppercase">
+                                Event XXL
+                                <small class="event-title-date third-color">12.10.2015</small>
+                            </h4>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta optio natus ducimus est in, enim, quam obcaecati quia commodi hic incidunt.
+                            </p>
+
+                            <p class="third-color event-date"><i class="icon-calendar"></i> 10.12.2015</p>
+                            <p class="third-color event-time"><i class="icon-clock"></i> 13:00 - 16:30</p>
+                            <p class="third-color event-location"><i class="icon-location-pin"></i> Kirche Derendingen</p>
+
+                        </div><!-- End .event-content -->
+
+                    </div><!-- End .event -->
+                </div><!-- End .owl-carousel -->
+            </div>
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+</section>

@@ -1,0 +1,67 @@
+<section class="section bg-lightgray" id="contact" ng-controller="ContactSectionController as contactCtrl">
+    <header class="section-header container text-center mb30">
+        <h2 class="section-title title-underblock dark normal">Kontakt</h2>
+        <p class="lead small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius maiores blanditiis voluptatum. <br> Odit voluptatem illum ex accusantium itaque vel quam iste optio..</p>
+    </header>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="h2 title-underblock dark mb30"><span>Ihr Anliegen</span></h3>
+                <form action="php/mail.php" method="post" id="contact-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contactname" class="input-desc">Vorname</label>
+                                <input type="text" class="form-control" id="contactname" name="contactname" placeholder="Vorname" required>
+                            </div><!-- End .from-group -->
+                        </div><!-- End .col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contactlastname" class="input-desc">Nachname</label>
+                                <input type="text" class="form-control" id="contactlastname" name="contactlastname" placeholder="Nachname">
+                            </div><!-- End .from-group -->
+                        </div><!-- End .col-md-6 -->
+                    </div><!-- End .row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contactemail" class="input-desc">Email</label>
+                                <input type="email" class="form-control" id="contactemail" name="contactemail" placeholder="Email" required>
+                            </div><!-- End .from-group -->
+                        </div><!-- End .col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contactsubject" class="input-desc">
+                                    Anliegen
+                                </label>
+                                <select class="form-control" id="contactsubject" name="contactsubject">
+                                    <option>Taufschein</option>
+                                </select>
+                            </div><!-- End .from-group -->
+                        </div><!-- End .col-md-6 -->
+                    </div><!-- End .row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="contactmessage" class="input-desc">Nachricht</label>
+                                <textarea class="form-control" rows="6" id="contactmessage" name="contactmessage" placeholder="Beschreiben Sie ihr Anliegen kurz und klar" required></textarea>
+                            </div><!-- End .from-group -->
+
+                            <div class="mb5"></div><!-- space -->
+
+                            <div class="form-group text-right">
+                                <input type="submit" class="btn btn-dark min-width" data-loading-text="Senden..." value="Absenden">
+                            </div><!-- End .from-group -->
+                        </div><!-- End .col-md-12 -->
+                    </div><!-- End .row -->
+                </form>
+            </div><!-- End .col-md-8 -->
+
+            <div class="mb30 visible-sm visible-xs"></div><!-- space -->
+
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+</section>
