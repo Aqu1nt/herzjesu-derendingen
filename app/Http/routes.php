@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page');
-});
+Route::get('{url?}', function () {
+    return view('index');
+})->where('url', '(home)');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,18 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+    Route::group(['prefix' => '/api/v1'], function(){
+
+        //Auth section
+        Route::group(['prefix' => '/auth'], function(){
+            Route::post('/login', 'AuthController@login');
+            Route::post('/logout', 'AuthController@logout');
+            Route::get('/isLoggedIn', 'AuthController@isLoggedIn');
+        });
+
+        //MagicURL to create the admin user
+        Route::get('/admin', 'Auth\AuthController@createAdmin');
+    });
+
 });

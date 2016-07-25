@@ -1,0 +1,15 @@
+<script>/**@type{LoginModalController}*/var modalCtrl;</script>
+<form class="login-modal form-horizontal animated" ng-submit="modalCtrl.submit()" ng-class="{shake : modalCtrl.shake}">
+    <span class="btn btn-default pull-right close" ng-click="modalCtrl.$scope.$close()"><i class="fa fa-remove"></i></span>
+    <h2 class="text-center">
+        Admin Login
+    </h2>
+    <div class="form-group">
+        <input class="form-control text-center" type="password" ng-model="modalCtrl.password" autofocus placeholder="Enter password">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark col-lg-12">
+            Login
+        </button>
+    </div>
+</form>

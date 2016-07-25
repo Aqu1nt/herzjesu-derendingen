@@ -1,0 +1,36 @@
+<section class="section" id="gallery" ng-controller="GallerySectionController as gallCtrl">
+    <header class="section-header container text-center mb30">
+        <h2 class="section-title title-underblock dark normal">Gallerie</h2>
+        <p class="lead small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius maiores blanditiis voluptatum. <br> Odit voluptatem illum ex accusantium itaque vel quam iste optio..</p>
+    </header>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-2 col-lg-2 gallery-selection">
+                <h3 class="title-underblock dark">
+                    <span>Gallerien</span>
+                </h3>
+                <div>Anlass X</div>
+                <div class="active text-primary">Event Y</div>
+                <div>Feier C</div>
+            </div>
+            <div class="col-md-10 col-lg-10">
+                <div id="unite-gallery" style="display: none;">
+
+                    <img class="zoomInDown wow fast"
+                         alt="Purple Flower"
+                         src="img/img{{ i % 13 + 1 }}.jpg"
+                         data-image="img/img{{ i % 13 + 1 }}.jpg"
+                         data-description="This is purple flower"
+                         style="display:none"
+                         ng-repeat="i in [1]">
+
+                </div>
+            </div>
+        </div>
+        <div class="mb5"></div><!-- space -->
+
+    </div><!-- End .container -->
+
+</section>
