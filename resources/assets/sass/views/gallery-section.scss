@@ -1,0 +1,22 @@
+.gallery-selection > div {
+  transition: color 0.3s, border-color 0.3s;
+  font-size: 13px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-left: 1px solid transparent;
+  width: 100%;
+}
+
+.gallery-selection > div:hover, .gallery-selection > div.active {
+
+  .gallery-name {
+    color: $boss-color;
+    font-weight: bold;
+  }
+
+  border-color: $boss-color;
+}
+
+.delete-gallery {
+  font-size: 20px;
+}

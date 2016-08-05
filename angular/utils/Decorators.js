@@ -1,6 +1,7 @@
-import "./ES6PromiseHook"
 import App from "../AngularModule"
-import es6enabler from "../utils/ES6Directive"
+
+import "./Angular2to1/integration/ES6PromiseHook"
+import es6enabler from "./Angular2to1/util/ES6Directive"
 
 //We need the Injector in some decorators
 let $injector = null;
@@ -26,37 +27,6 @@ let exposeModule = module => {
 };
 App.run(() => exposeModule(App));
 
-/**
- * @decorator
- * @param {string | function} arg
- * @returns {Function}
- * @exports
- */
-export function Service(arg) {
-    arg = fetch(arg);
-    if (arg instanceof Function) App.service(arg.name, arg);
-    else return (target) => {
-        App.service(arg, target);
-        return target;
-    };
-    return arg;
-}
-
-/**
- * @decorator
- * @param {string | function} arg
- * @returns {Function}
- * @exports
- */
-export function Controller(arg) {
-    arg = fetch(arg);
-    if (arg instanceof Function) App.controller(arg.name, arg);
-    else return (target) => {
-        App.controller(arg, target);
-        return target;
-    };
-    return arg;
-}
 
 /**
  * @decorator
@@ -667,7 +637,8 @@ export function On(event)
 }
 
 /**
- * Calls @Init and @Destroy on the CONTROLLER
+ * Calls all registered annotations on the controller, or on
+ * the service
  * @param controller
  * @param $scope
  */

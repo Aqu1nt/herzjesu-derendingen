@@ -38,8 +38,29 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/isLoggedIn', 'AuthController@isLoggedIn');
         });
 
+        //Events
+        Route::get("/events", 'EventController@index');
+        Route::get("/events/locations", "EventController@locations");
+        Route::group(['middleware' => 'auth'], function(){
+            Route::put('/events/{id}', "EventController@update");
+            Route::delete('/events/{id}', "EventController@delete");
+            Route::post('/events', "EventController@create");
+        });
+
+        //Gallery
+        Route::group(["prefix" => "/galleries"], function(){
+            Route::get('', 'GalleryController@all');
+
+            Route::group(['middleware' => 'auth'], function() {
+                Route::post('', 'GalleryController@create');
+                Route::put('/{id}', 'GalleryController@editName');
+                Route::delete('/{id}', 'GalleryController@delete');
+                Route::post('/{id}/images', 'GalleryController@uploadImages');
+            });
+        });
+
         //MagicURL to create the admin user
-        Route::get('/admin', 'Auth\AuthController@createAdmin');
+        Route::get('/admin', 'AuthController@createAdmin');
     });
 
 });

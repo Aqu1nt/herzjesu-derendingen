@@ -1998,7 +1998,6 @@
 
 	};
 
-	Boss.queryLoad();
 	window.Boss = Boss;
 
 	// Load Event

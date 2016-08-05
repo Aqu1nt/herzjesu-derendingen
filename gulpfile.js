@@ -25,7 +25,10 @@ elixir(function(mix) {
     mix.sass('app.scss', undefined, {
         includePaths: [ './node_modules' ]
     });
-    mix.browserify('./angular/App.js', 'public/js/App.js', '.', {
+    mix.browserify('./angular/App.js', './public/js/App.js', '.', {
+        paths: ['public'],
+        packageCache : {},
+        cache : {},
         debug : true
     }).livereload();
     mix.copy('angular/views', 'public/views', '.');

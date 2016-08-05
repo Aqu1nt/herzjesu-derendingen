@@ -1,0 +1,12 @@
+<script>/**@type{UniteGalleryComponent}*/var ugCtrl;</script>
+<div id="unite-gallery" style="display: none;">
+
+    <img class=""
+         ng-repeat="image in ugCtrl.images"
+         alt="{{ image.name }}"
+         src="/uploads/{{ image.thumb_path }}"
+         data-image="/uploads/{{:: image.image_path }}"
+         data-description="{{:: image.name }}"
+         style="display:none">
+
+</div>

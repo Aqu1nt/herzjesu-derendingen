@@ -1,7 +1,9 @@
 <section class="section" id="gallery" ng-controller="GallerySectionController as gallCtrl">
     <header class="section-header container text-center mb30">
         <h2 class="section-title title-underblock dark normal">Gallerie</h2>
-        <p class="lead small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius maiores blanditiis voluptatum. <br> Odit voluptatem illum ex accusantium itaque vel quam iste optio..</p>
+        <p class="lead small">
+            Hier finden Sie alle Eindrücke von unseren Anlässen.
+        </p>
     </header>
 
     <div class="container">
@@ -10,23 +12,57 @@
             <div class="col-md-2 col-lg-2 gallery-selection">
                 <h3 class="title-underblock dark">
                     <span>Gallerien</span>
+                    <span class="btn btn-white pull-right animated fadeIn" uib-tooltip="Neue Gallerie erstellen" admin ng-click="gallCtrl.newGallery()">
+                        <i class="fa fa-plus"></i>
+                    </span>
                 </h3>
-                <div>Anlass X</div>
-                <div class="active text-primary">Event Y</div>
-                <div>Feier C</div>
-            </div>
-            <div class="col-md-10 col-lg-10">
-                <div id="unite-gallery" style="display: none;">
-
-                    <img class="zoomInDown wow fast"
-                         alt="Purple Flower"
-                         src="img/img{{ i % 13 + 1 }}.jpg"
-                         data-image="img/img{{ i % 13 + 1 }}.jpg"
-                         data-description="This is purple flower"
-                         style="display:none"
-                         ng-repeat="i in [1]">
-
+                <spinner trigger="gallCtrl.loadingGalleries"></spinner>
+                <div ng-repeat="gallery in gallCtrl.galleries"
+                     ng-class="{'active' : gallery === gallCtrl.gallery}"
+                     ng-click="gallCtrl.gallery = gallery"
+                     class="hidden-sm hidden-xs"
+                     ng-hide="gallCtrl.loadingGalleries">
+                    <span class="gallery-name" uib-tooltip="{{ gallery.name }}">{{ gallery.name | limitTo : 30 }}</span>
                 </div>
+                <select ng-options="gallery.name for gallery in gallCtrl.galleries"
+                        ng-model="gallCtrl.gallery"
+                        class="form-control hidden-lg hidden-md"
+                        ng-hide="gallCtrl.loadingGalleries">
+
+                </select>
+                <h5 ng-hide="gallCtrl.galleries.length || gallCtrl.loadingGalleries">Keine Gallerien</h5>
+            </div>
+            <div class="col-md-10 col-lg-10" ng-show="gallCtrl.gallery">
+                <h2 class="mb30">
+                    {{ gallCtrl.gallery.name }}
+                    <small class="text-primary hidden-xs">{{ gallCtrl.gallery.created_at.split(' ')[0].split('-').reverse().join('.') }}</small>
+                    <span class="pull-right" admin>
+
+                        <button class="btn btn-white" uib-tooltip="Bilder hinzufügen"
+                            ngf-select="gallCtrl.uploadImages(images)" ngf-multiple="true" ng-model="images"
+                            ngf-accept="'image/*'">
+                            <i class="fa fa-picture-o"></i>
+                        </button>
+
+                        <span class="btn btn-white" uib-tooltip="Name bearbeiten" ng-click="gallCtrl.editName()">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+
+                        <span class="btn btn-white" uib-tooltip="Gallerie löschen" ng-click="gallCtrl.deleteGallery()">
+                            <i class="fa fa-trash"></i>
+                        </span>
+                    </span>
+                </h2>
+
+                <!--Image upload progress-->
+                <uib-progressbar value="gallCtrl.progress" max="1" ng-hide="gallCtrl.progress === null" title="Fortschritt Upload">
+                    <span class="text-center" style="width: 100%; display: inline-block">{{ gallCtrl.progress * 100 | number : 0 }}%</span>
+                </uib-progressbar>
+
+                <!--Unite gallery-->
+                <unite-gallery images="gallCtrl.gallery.images" ng-show="gallCtrl.gallery.images.length"></unite-gallery>
+                <h3 class="text-center" ng-hide="gallCtrl.gallery.images.length">Keine Bilder</h3>
+
             </div>
         </div>
         <div class="mb5"></div><!-- space -->
@@ -34,3 +70,4 @@
     </div><!-- End .container -->
 
 </section>
+

@@ -1,4 +1,5 @@
-import {Service, Inject} from "../utils/Decorators"
+import {Inject} from "../utils/Decorators"
+import {Service} from "../utils/Angular2to1/Angular2to1"
 
 /**
  * Class which is responsible for every interaction with

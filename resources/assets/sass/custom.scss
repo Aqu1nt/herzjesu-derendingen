@@ -156,16 +156,6 @@
 	color : #ecf0f1;
 }
 
-.gallery-selection > div {
-	transition: all 0.5s;
-	font-size: 13px;
-	padding: 5px 10px;
-	cursor: pointer;
-	border-left: 1px solid transparent;
-	width: 100%;
-}
-
-.gallery-selection > div:hover, .gallery-selection > div.active {
-	border-color: #337ab7;
-	color: #337ab7;
+.progress-bar {
+	background: $boss-color;
 }

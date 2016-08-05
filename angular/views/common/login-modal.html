@@ -8,8 +8,9 @@
         <input class="form-control text-center" type="password" ng-model="modalCtrl.password" autofocus placeholder="Enter password">
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-dark col-lg-12">
-            Login
+        <button type="submit" class="btn btn-dark col-xs-12" ng-disabled="modalCtrl.loggingIn">
+            <span ng-hide="modalCtrl.loggingIn">Login</span>
+            <spinner trigger="modalCtrl.loggingIn"></spinner>
         </button>
     </div>
 </form>

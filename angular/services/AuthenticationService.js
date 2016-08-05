@@ -1,4 +1,5 @@
-import {Service, Inject, Init} from "../utils/Decorators"
+import {Inject, Init} from "../utils/Decorators"
+import {Service} from "../utils/Angular2to1/Angular2to1"
 
 @Service("AuthenticationService")
 export class AuthenticationService
@@ -60,4 +61,5 @@ export class AuthenticationService
         await this.ApiService.post('/auth/logout');
         this.loggedIn = false;
     }
+
 }

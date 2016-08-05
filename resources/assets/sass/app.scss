@@ -7,7 +7,13 @@ $boss-text-gray : #9a9a9a;
 $boss-color : #1B778C;
 
 @import "angular-toastr/dist/angular-toastr.min";
+@import "angularjs-datepicker/dist/angular-datepicker.min";
+@import "owl.carousel/dist/assets/owl.carousel";
+@import "sweetalert/dist/sweetalert";
+@import "common/sweetalert-theme";
 
+@import "datepicker-theme";
 @import "common/uib-modal";
 @import "views/events-section";
+@import "views/gallery-section";
 

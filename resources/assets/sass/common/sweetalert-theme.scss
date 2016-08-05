@@ -1,0 +1,18 @@
+.sweet-alert {
+
+  border-top: 6px solid $boss-color;
+  border-radius: 0;
+
+  * {
+    font-family: Raleway;
+  }
+
+  .confirm {
+    background-color: $boss-gray !important;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($boss-gray, 10%) !important;
+    }
+  }
+}

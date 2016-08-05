@@ -1,4 +1,9 @@
-import App from "../AngularModule"
+import {lookupAngularModule} from "../util/AngularModuleResolver"
+import {config} from "../util/Configuration"
+
+// Attempt to fetch the main angular module
+let App = lookupAngularModule();
+
 
 //We need the Injector in some decorators
 let $injector = null;
@@ -8,7 +13,6 @@ App.run(["$injector", (i) => $injector = i]);
  * Hook angular $digest callback into Promises in order to work
  * with async / await
  */
-let maxDigestFrequency = 50;
 let nextAvailableDigest = new Date().getTime();
 let scheduledDigest = null;
 let $rootScope = null;
@@ -34,8 +38,8 @@ let requestDigestCycle = function()
         let now = new Date().getTime();
 
         //Digest is available
-        if (now >= nextAvailableDigest) {
-            nextAvailableDigest = now + maxDigestFrequency;
+        if (now >= nextAvailableDigest || !config.DEBOUNCE_DIGEST) {
+            nextAvailableDigest = now + config.DEBOUNCE_DIGEST_MILLIS;
             digest();
         }
         //Digest must be delayed slightly
@@ -45,7 +49,7 @@ let requestDigestCycle = function()
             if (scheduledDigest == null) {
                 scheduledDigest = setTimeout(() => {
                     scheduledDigest = null;
-                    nextAvailableDigest = new Date().getTime() + maxDigestFrequency;
+                    nextAvailableDigest = new Date().getTime() + config.DEBOUNCE_DIGEST_MILLIS;
                     digest();
                 }, nextAvailableDigest - now)
             }
@@ -66,13 +70,19 @@ let proxy = function(fn){
 };
 
 //Inject proxies as then callback
-Promise.prototype.$$then = Promise.prototype.then;
+const $$PromiseThenOriginal = Promise.prototype.then;
 Promise.prototype.then = function(success, error) {
-    return this.$$then(proxy(success), proxy(error));
+    return $$PromiseThenOriginal.call(this, proxy(success), proxy(error));
+};
+
+//Inject proxies as success callback
+const $$PromiseSuccessOriginal = Promise.prototype.success;
+Promise.prototype.success = function(result) {
+    return $$PromiseSuccessOriginal.call(this, proxy(result));
 };
 
 //Inject proxies as catch callback
-Promise.prototype.$$catch = Promise.prototype.catch;
+const $$PromiseCatchOriginal = Promise.prototype.catch;
 Promise.prototype.catch = function(error) {
-    return this.$$catch(proxy(error));
+    return $$PromiseCatchOriginal.call(this, proxy(error));
 };

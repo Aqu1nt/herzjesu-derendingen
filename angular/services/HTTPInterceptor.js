@@ -1,4 +1,5 @@
-import {Service, Inject, Config, Self} from "../utils/Decorators"
+import {Inject, Config, Self} from "../utils/Decorators"
+import {Service} from "../utils/Angular2to1/Angular2to1"
 
 /**
  * This is the Interceptor used to intercept each

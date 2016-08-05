@@ -3,6 +3,10 @@ import 'angular-animate'
 import 'angular-sanitize'
 import 'angular-ui-bootstrap'
 import 'angular-toastr'
+import 'angularjs-datepicker'
+import 'angular-sweetalert'
+import 'sweetalert'
+import 'ng-file-upload'
 
 /* ==========================================
  *               Plugins
@@ -13,6 +17,9 @@ plugins.push("ngAnimate");
 plugins.push("ngSanitize");
 plugins.push('ui.bootstrap');
 plugins.push('toastr');
+plugins.push('720kb.datepicker');
+plugins.push('oitozero.ngSweetAlert');
+plugins.push('ngFileUpload');
 
 /**
  * This is the main Angular Application

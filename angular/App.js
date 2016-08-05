@@ -1,5 +1,23 @@
-import "angular"
 import "babel-polyfill"
+import "angular"
+import "jquery"
+
+import 'owl.carousel';
+import "./plugins/angular-owl-carousel"
+
+import "js/queryloader2.min.js"
+import "js/bootstrap.min.js"
+import "js/jquery.hoverIntent.min.js"
+import "js/jquery.nicescroll.min.js"
+import "js/jquery.debouncedresize.js"
+import "js/skrollr.min.js"
+import "js/jquery.magnific-popup.min.js"
+import "js/main.js"
+
+import "moment/locale/de"
+import moment from "moment"
+moment.locale("de");
+
 
 /* ==========================================
  *              Controllers
@@ -22,18 +40,23 @@ import "./services/HTTPInterceptor"
 import "./services/LoginService"
 import "./services/AuthenticationService"
 import "./services/EventModalService"
+import "./services/EventService"
+import "./services/InputService"
+import "./services/GalleryService"
 
 /* ==========================================
  *              Components
  * ======================================== */
 import "./components/PageTitleComponent"
+import "./components/SpinnerComponent"
+import "./components/UniteGalleryComponent"
 
 /* ==========================================
  *               Directives
  * ======================================== */
 import "./directives/NgEnterDirective"
-import "./directives/BtnRightDirective"
-
+import "./directives/BtnFloatDirective"
+import "./directives/AdminDirective"
 
 /* ==========================================
  *              Other Stuff

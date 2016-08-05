@@ -1,4 +1,73 @@
 <script>/**@type{EventModalController}*/var modalCtrl</script>
-<div class="form-horizontal event-form ">
+<form class="form-horizontal event-form" ng-submit="modalCtrl.submit()">
+    <span class="btn btn-default pull-right close" ng-click="modalCtrl.$scope.$close()"><i class="fa fa-remove"></i></span>
+    <h2 class="text-center">
+        <i class="fa fa-calendar-plus-o btn-left pull-left"></i>
+        {{ modalCtrl.create ? 'Anlass erfassen' : 'Anlass bearbeiten' }}
+    </h2>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <label class="input-desc">Titel</label>
+            <input type="text" class="form-control" name="title" placeholder="Titel" required ng-model="modalCtrl.event.title" required>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="input-desc">Ort</label>
+            <input type="text" ng-model="modalCtrl.event.location" placeholder="Ort" class="form-control" required
+                uib-typeahead="location for location in modalCtrl.locations | limitTo : 8"
+                typeahead-min-length="0">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-xs-12">
+            <datepicker selector="form-control" date-format="{{:: modalCtrl.FORMAT }}" date-min-limit="{{:: modalCtrl.TODAY.toDate().toString() }}"
+                datepicker-append-to=".event-date-row">
+                <label class="input-desc">Datum</label>
+                <input type="text" class="form-control" name="date" ng-model="modalCtrl.event.date" placeholder="{{:: modalCtrl.FORMAT }}" required>
+            </datepicker>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <label class="input-desc">Start</label>
+            <uib-timepicker show-meridian="false" show-spinners="false" ng-model="modalCtrl.event.start" max="modalCtrl.event.end"></uib-timepicker>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <label class="input-desc">Ende</label>
+            <uib-timepicker show-meridian="false" show-spinners="false" ng-model="modalCtrl.event.end" min="modalCtrl.event.start" required></uib-timepicker>
+        </div>
+        <div class="col-lg-12 event-date-row"></div>
+    </div>
 
-</div>
+    <div class="row">
+        <div class="col-sm-12 mt30-sm"></div>
+        <div class="col-xs-12">
+            <label class="input-desc">Beschreibung</label>
+            <textarea ng-model="modalCtrl.event.desc" placeholder="Beschreibung" class="form-control" rows="4"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-danger pull-left" type="button"
+                    ng-if="!modalCtrl.create" ng-disabled="modalCtrl.creatingEvent || modalCtrl.deletingEvent"
+                    ng-click="modalCtrl.delete()">
+
+                <span ng-hide="modalCtrl.deletingEvent">
+                    <i class="fa fa-trash fa-before"></i> Löschen
+                </span>
+
+                <spinner trigger="modalCtrl.deletingEvent"></spinner>
+            </button>
+
+            <button class="btn btn-dark pull-right" type="submit" ng-disabled="modalCtrl.creatingEvent || modalCtrl.deletingEvent">
+                <span ng-hide="modalCtrl.creatingEvent">
+                    <span ng-show=modalCtrl.create>
+                        <i class="fa fa-plus fa-before"></i> Erstellen
+                    </span>
+                    <span ng-hide="modalCtrl.create">
+                        <i class="fa fa-save fa-before"></i> Speichern
+                    </span>
+                </span>
+                <spinner trigger="modalCtrl.creatingEvent"></spinner>
+            </button>
+        </div>
+    </div>
+</form>

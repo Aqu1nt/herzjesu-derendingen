@@ -32,34 +32,16 @@
 
     <div ui-view></div>
 
-    <!-- Smoothscroll -->
-    <script src="js/smoothscroll.js"></script>
-
-    <!-- Modernizr -->
-    <script src="js/modernizr.js"></script>
-
-    <!--- jQuery -->
     <script src="js/jquery.min.js"></script>
-
-    <!-- Queryloader -->
-    <script src="js/queryloader2.min.js"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.hoverIntent.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/waypoints-sticky.min.js"></script>
-    <script src="js/jquery.debouncedresize.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/skrollr.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src='unitegallery/js/unitegallery.min.js'></script> 
-	<script src='unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js'></script>
-    <script src="js/main.js"></script>
-
+    <script src='unitegallery/js/unitegallery.js'></script>
+    <script src='unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js'></script>
+    <script src='unitegallery/themes/compact/ug-theme-compact.js'></script>
+    <script src="js/smoothscroll.js"></script>
     <script src="js/App.js"></script>
 
-	
     </body>
 </html>

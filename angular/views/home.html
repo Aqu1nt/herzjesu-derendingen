@@ -29,8 +29,9 @@
                             </li>
                             <li ng-if="homeCtrl.loggedIn" uib-tooltip="Ausloggen" tooltip-placement="bottom">
                                 <a ng-click="homeCtrl.logout()" href>
-                                    <i class="fa fa-sign-out"></i>
-                                    <span class="hidden-lg hidden-md hidden-sm">Login</span>
+                                    <i class="fa fa-sign-out" ng-hide="homeCtrl.loggingOut"></i>
+                                    <span class="hidden-lg hidden-md hidden-sm">Logout</span>
+                                    <spinner trigger="homeCtrl.loggingOut"></spinner>
                                 </a>
                             </li>
                         </ul>

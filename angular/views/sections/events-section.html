@@ -1,51 +1,75 @@
 <section class="section landing-services-section bg-dark" id="events" ng-controller="EventsSectionController as evCtrl">
     <header class="section-header container mb40 text-center">
-        <span class="btn pull-right btn-dark wow fadeIn" uib-tooltip="Anlass hinzufügen"
-              ng-show="homeCtrl.loggedIn" ng-click="evCtrl.newEvent()" btn-right>
+        <span class="btn pull-right btn-dark wow fadeIn" uib-tooltip="Anlass hinzufügen"ng-click="evCtrl.newEvent()" btn-right admin>
             <i class="fa fa-plus fa-before"></i> Neu
         </span>
         <h2 class="section-title title-underblock white normal text-white" style="display: inline-block">Anlässe</h2>
         <p class="text-darkgray">Hier finden Sie all unsere Anlässe, Sie sind herzlich eingeladen teilzunehmen.</p>
     </header>
     <div class="container mb30">
-        <div class="row">
+        <div class="row" ng-show="evCtrl.loadingEvents">
+            <h2 class="text-muted text-center">
+                <i class="fa fa-spinner fa-spin fa-before"></i> Anlässe werden geladen ...
+            </h2>
+        </div>
+        <div class="row" ng-show="evCtrl.error">
+            <div class="col-lg-12 alert alert-danger text-center">
+                <h2 class="text-danger mt15">
+                    Anlässe konnten nicht vom Server geladen werden!
+                </h2>
+                <div class="btn btn-danger" ng-click="evCtrl.loadEvents()">
+                    <i class="fa fa-refresh fa-before"></i>
+                    Erneut versuchen
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-hide="evCtrl.loadingEvents || evCtrl.error">
             <div class="next-event highlighted-bg col-md-4 wow bounceIn del-025">
-                <h6 class="third-color">In 3 Tagen - Samstag</h6>
-                <h2 class="title-underblock dark mb30">Taufe Fritzli</h2>
-                <div class="event">
-                    <div class="event-content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta optio natus ducimus est in, enim, quam obcaecati quia commodi hic incidunt.
-                        </p>
+                <div ng-show="evCtrl.event">
+                    <h6 class="third-color">
+                        {{ evCtrl.event.distance }} - {{ evCtrl.event.dayOfWeek }}
+                        <span class="label label-primary pull-right">Bevorstehend</span>
+                    </h6>
+                    <h2 class="title-underblock dark mb15">{{ evCtrl.event.title }}</h2>
+                    <div class="event">
+                        <div class="event-content">
+                            <a class="third-color event-edit" href ng-click="evCtrl.editEvent(evCtrl.event)" admin>
+                                <i class="fa fa-pencil"></i> Anlass bearbeiten
+                            </a>
+                            <p class="third-color event-date"><i class="icon-calendar"></i> {{ evCtrl.event._date }}</p>
+                            <p class="third-color event-time"><i class="icon-clock"></i> {{ evCtrl.event._start }} - {{ evCtrl.event._end }}</p>
+                            <p class="third-color event-location"><i class="icon-location-pin"></i> {{ evCtrl.event.location }}</p>
 
-                        <p class="third-color event-date"><i class="icon-calendar"></i> 10.12.2015</p>
-                        <p class="third-color event-time"><i class="icon-clock"></i> 13:00 - 16:30</p>
-                        <p class="third-color event-location"><i class="icon-location-pin"></i> Kirche Derendingen</p>
+                            <p class="mt15">{{ evCtrl.event.desc }}</p>
 
-                    </div><!-- End .event-content -->
-
-                </div><!-- End .event -->
+                        </div><!-- End .event-content -->
+                    </div><!-- End .event -->
+                </div>
+                <div ng-hide="evCtrl.event">
+                    <h2 class="text-center mt30 text-danger">
+                        <i class="fa fa-remove fa-before"></i>
+                        Keine Anlässe gefunden
+                    </h2>
+                </div>
             </div>
             <div class="mb30 visible-xs visible-sm"></div><!--space -->
 
             <div class="other-events col-md-8">
                 <h4 class="title-underblock dark bg-dark mb30">Weitere</h4>
                 <div class="owl-carousel events-slider">
-                    <div class="event fast wow fadeInRight vertical" ng-repeat="i in [1,2,3,4,5,6,7,8,9]">
+                    <div class="event hidden fast wow fadeInRight vertical" ng-if="!$first" ng-repeat="event in evCtrl.events">
                         <div class="event-content">
-                            <h4 class="event-title text-white text-uppercase">
-                                Event XXL
-                                <small class="event-title-date third-color">12.10.2015</small>
+                            <h4 class="event-title text-white" ng-click="evCtrl.editEvent(event)">
+                                <span class="">{{ event.title }}</span>
+                                <small class="event-title-date third-color">{{ event.dayOfWeek }}</small>
                             </h4>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta optio natus ducimus est in, enim, quam obcaecati quia commodi hic incidunt.
-                            </p>
-
-                            <p class="third-color event-date"><i class="icon-calendar"></i> 10.12.2015</p>
-                            <p class="third-color event-time"><i class="icon-clock"></i> 13:00 - 16:30</p>
-                            <p class="third-color event-location"><i class="icon-location-pin"></i> Kirche Derendingen</p>
-
+                            <a class="third-color event-edit" href ng-click="evCtrl.editEvent(event)" admin>
+                                <i class="fa fa-pencil"></i> Anlass bearbeiten
+                            </a>
+                            <p class="third-color event-date"><i class="icon-calendar"></i> {{ event._date }}</p>
+                            <p class="third-color event-time"><i class="icon-clock"></i> {{ event._start }} - {{ event._end }}</p>
+                            <p class="third-color event-location"><i class="icon-location-pin"></i> {{ event.location }}</p>
+                            <p>{{ event.desc }}</p>
                         </div><!-- End .event-content -->
 
                     </div><!-- End .event -->

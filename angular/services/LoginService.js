@@ -1,4 +1,5 @@
-import {Service, Inject} from "../utils/Decorators"
+import {Inject} from "../utils/Decorators"
+import {Service} from "../utils/Angular2to1/Angular2to1"
 
 @Service("LoginService")
 export class LoginService
@@ -55,6 +56,12 @@ class LoginModalController
     shake = false;
 
     /**
+     * Indicator if a login is in progress
+     * @type {boolean}
+     */
+    loggingIn = false;
+
+    /**
      * Timeout to shake for a certain amount of time
      */
     @Inject $timeout;
@@ -71,12 +78,14 @@ class LoginModalController
 
     async submit()
     {
+        this.loggingIn = true;
         if (await this.AuthenticationService.login(this.password))
         {
             this.$scope.$close()
         } else {
             this.reject();
         }
+        this.loggingIn = false;
     }
 
     reject()
