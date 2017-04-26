@@ -1,5 +1,5 @@
-import {Inject, Config, Self} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Inject, Service, Config, Self} from "ng-next"
+
 
 /**
  * This is the Interceptor used to intercept each

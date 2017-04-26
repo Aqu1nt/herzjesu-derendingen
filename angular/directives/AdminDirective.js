@@ -1,4 +1,5 @@
-import {Directive, Inject} from "../utils/Decorators"
+import {Directive, Inject} from "ng-next"
+
 
 /**
  * Disables an element if the user is not logged in

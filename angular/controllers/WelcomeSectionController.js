@@ -1,4 +1,4 @@
-import {Controller, Inject} from "../utils/Decorators"
+import {Controller} from "ng-next"
 
 
 @Controller("WelcomeSectionController")

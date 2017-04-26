@@ -56,6 +56,24 @@ Route::group(['middleware' => ['web']], function () {
                 Route::put('/{id}', 'GalleryController@editName');
                 Route::delete('/{id}', 'GalleryController@delete');
                 Route::post('/{id}/images', 'GalleryController@uploadImages');
+                Route::delete('/{id}/images/{imageId}', 'GalleryController@deleteImage');
+            });
+        });
+
+        //Contact
+        Route::group(["prefix" => "/contact"], function(){
+           Route::post("/", "ContactController@sendContactEmail");
+        });
+
+        //Persons
+        Route::group(["prefix" => "/persons"], function(){
+
+            Route::get("", "PersonController@allPersons");
+
+            Route::group(["middleware" => "auth"], function(){
+                Route::post("", "PersonController@create");
+                Route::put("/{id}", "PersonController@update");
+                Route::delete("/{id}", "PersonController@delete");
             });
         });
 

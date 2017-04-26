@@ -1,6 +1,7 @@
-import {Inject, Init} from "../utils/Decorators"
-import {Controller} from "../utils/Angular2to1/Angular2to1"
+import {Init} from "ng-next"
+import {Inject, Controller} from "ng-next"
 import moment from "moment"
+
 
 @Controller("EventsSectionController")
 export class EventsSectionController

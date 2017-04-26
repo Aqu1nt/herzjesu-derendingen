@@ -1,4 +1,4 @@
-import {Directive, Inject} from "../utils/Decorators"
+import {Directive} from "ng-next"
 
 @Directive("ngEnter")
 export class NgEnter

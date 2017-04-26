@@ -1,5 +1,4 @@
-import {Inject} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Inject, Service} from "ng-next"
 
 @Service("EventService")
 export class EventService
@@ -23,6 +22,8 @@ export class EventService
      */
     store(event, update = false)
     {
+        delete event.flyer;
+        delete event.img;
         if (update) return this.update(event);
         return this.ApiService.post("/events", event);
     }

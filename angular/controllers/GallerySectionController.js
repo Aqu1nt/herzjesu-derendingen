@@ -1,5 +1,5 @@
-import {Controller, Inject} from "../utils/Decorators"
-import {Init, Watch} from "../utils/Decorators";
+import {Init} from "ng-next";
+import {Controller, Inject} from "ng-next"
 
 @Controller("GallerySectionController")
 export class GallerySectionController
@@ -40,7 +40,7 @@ export class GallerySectionController
      * The current active gallery
      * @type {null}
      */
-    gallery = null;
+    gallery = undefined;
 
     /**
      * Indicator if galleries are loading
@@ -54,15 +54,37 @@ export class GallerySectionController
      */
     progress = null;
 
+    set galleryName(name)
+    {
+        this.gallery = this.galleries.find(g => g.name == name);
+    }
+
+    get galleryName()
+    {
+        return !!this.gallery ? this.gallery.name : undefined;
+    }
+
     /**
      * Loads all galleries from the server
      */
     @Init async loadGalleries()
     {
-        this.loadingGalleries = true;
-        this.galleries = await this.GalleryService.all();
-        this.gallery = this.galleries[0];
-        this.loadingGalleries = false;
+        try
+        {
+            this.loadingGalleries = true;
+            this.galleries.length = 0;
+            for (let gallery of await this.GalleryService.all()) {
+                this.galleries.push(gallery);
+            }
+            this.gallery = this.galleries[0];
+        } catch (e)
+        {
+            this.toastr.error("Gallerie konnte nicht geladen werden. Bitte laden Sie die Seite neu");
+        }
+        finally
+        {
+            this.loadingGalleries = false;
+        }
     }
 
 
@@ -160,21 +182,43 @@ export class GallerySectionController
         }
 
         this.progress = 0;
-        let promise = this.GalleryService.uploadImages(this.gallery, images);
-        promise.finally(undefined, progress => this.progress = 1 / progress.total * progress.loaded );
 
         try
         {
-            let uploadedImages = await promise;
-            this.gallery.images.unshift(... uploadedImages.data.images);
-            this.toastr.success(`${images.length} Bild${images.length > 1 ? 'er' : ''} hinzugefügt`, "Hinzufügen");
+            let uploadedImages = [];
+            for (let image of images)
+            {
+                try
+                {
+                    let promise = this.GalleryService.uploadImages(this.gallery, [image]);
+                    promise.finally(undefined, progress => this.progress = 1 / progress.total * progress.loaded );
+                    let response = await promise;
+                    uploadedImages.push(... response.data.images);
+                } catch (e) {
+                    if (e) console.error(e);
+                    this.toastr.warning(`Bild ${image.name} konnte nicht hochgeladen werden!`);
+                }
+            }
+
+            this.gallery.images.unshift(... uploadedImages);
+            this.toastr.success(`${uploadedImages.length} Bild${uploadedImages.length > 1 ? 'er' : ''} hinzugefügt`, "Hinzufügen");
         } catch (e)
         {
-            console.error(e);
+            if (e) console.error(e);
             this.toastr.error("Fehler beim hinzugen der Bilder", "Fehler");
         }
         finally {
             this.progress = null;
+        }
+    }
+
+    async deleteImage(img) {
+        try {
+            let response= await this.GalleryService.deleteImage(this.gallery, img);
+            this.gallery.images = this.gallery.images.filter(i => i.id != img.id);
+            this.toastr.success("Bild wurde gelöscht");
+        } catch (e) {
+            this.toastr.error("Bild konnte nicht gelöscht werden!");
         }
     }
 }

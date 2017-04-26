@@ -1,0 +1,13 @@
+.ug-remove-btn {
+  position: absolute;
+  right: 12px;
+  top: 3px;
+  font-size: 21px;
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}

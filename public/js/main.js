@@ -1468,7 +1468,9 @@
 			if (targetEl || toTop) {
 				$('html, body').animate({
 		            'scrollTop': targetPos
-		        }, speed || 1200);
+		        }, speed || 1200, function(){
+		        	window.location.hash = $(targetEl).length ? targetEl : "";
+				});
 		        e.preventDefault();
 			}
 		},
@@ -1486,7 +1488,7 @@
 			// add href attribute with target id (#targer like so ) for target 
 			// you can change 0 offset to -60 (height of fixed header)
 			$('.scroll-btn, .section-btn, .scrollto').on('click', function (e) {
-				var offset = $(this).data('offset');
+				var offset = $(this).data('offset') || -50;
 		        self.scrollToAnimation.call(this, 1200, offset, e);
 		    });
 		},

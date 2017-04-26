@@ -1,4 +1,5 @@
-import {State, Inject, Debounce, Init, Alias, View} from "../utils/Decorators"
+import {Debounce, Init} from "ng-next"
+import {Inject, State, Alias, View} from "ng-next"
 
 @State({
     name : "home",
@@ -23,6 +24,8 @@ export class HomeController
         { id : "history", name : "Geschichte" },
         { id : "links", name : "Links" }
     ];
+
+
 
     /**
      * @type {LoginService}

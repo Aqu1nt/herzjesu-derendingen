@@ -1,5 +1,5 @@
-import {Inject, Init} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Init} from "ng-next"
+import {Service, Inject} from "ng-next"
 import moment from "moment"
 
 @Service("EventModalService")
@@ -98,7 +98,8 @@ export class EventModalController
         end : moment(this.TOMORROW).add(17, 'hours').toDate(),
         title : "",
         desc : "",
-        location : ""
+        location : "",
+        flyer : null
     };
 
     /**

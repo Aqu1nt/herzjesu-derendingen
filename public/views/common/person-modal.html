@@ -1,0 +1,57 @@
+<script>/**@type{PersonModalController}*/var modalCtrl</script>
+<form class="form-horizontal event-form" ng-submit="modalCtrl.submit()">
+    <span class="btn btn-default pull-right close" ng-click="modalCtrl.$scope.$close()"><i class="fa fa-remove"></i></span>
+    <h2 class="text-center">
+        <i class="fa fa-user btn-left pull-left"></i>
+        {{ modalCtrl.create ? 'Person erfassen' : 'Person bearbeiten' }}
+    </h2>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="person-modal-image-wrapper" uib-tooltip="Klicken um Bild zu wechseln" style="cursor:pointer">
+                <img ngf-thumbnail="modalCtrl.person.image || modalCtrl.person.image_path || '/img/flat_avatar.png'" ngf-select ng-model="modalCtrl.person.image" ngf-accept="'image/*'">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label class="input-desc">Titel</label>
+            <input type="text" class="form-control" name="title" ng-model="modalCtrl.person.title" placeholder="Titel der Person" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <label class="input-desc">Beschreibung</label>
+            <textarea type="text" class="form-control" placeholder="Infos zur Person" name="title" ng-model="modalCtrl.person.fields" required rows="7">
+            </textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-danger pull-left" type="button"
+                    ng-if="!modalCtrl.create" ng-disabled="modalCtrl.creatingPerson || modalCtrl.deletingPerson"
+                    ng-click="modalCtrl.deletePerson()">
+
+                <span ng-hide="modalCtrl.deletingPerson">
+                    <i class="fa fa-trash fa-before"></i> Löschen
+                </span>
+
+                <spinner trigger="modalCtrl.deletingPerson"></spinner>
+            </button>
+
+            <button class="btn btn-dark pull-right" type="submit" ng-disabled="modalCtrl.creatingPerson || modalCtrl.deletingPerson">
+                <span ng-hide="modalCtrl.creatingPerson">
+                    <span ng-show=modalCtrl.create>
+                        <i class="fa fa-plus fa-before"></i> Erstellen
+                    </span>
+                    <span ng-hide="modalCtrl.create">
+                        <i class="fa fa-save fa-before"></i> Speichern
+                    </span>
+                </span>
+                <spinner trigger="modalCtrl.creatingPerson"></spinner>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,20 @@
+<script> /**@type{InputModalController}*/var inputCtrl; </script>
+<form class="input-modal form-horizontal animated" ng-submit="inputCtrl.submit()">
+    <span class="btn btn-default pull-right close" ng-click="inputCtrl.dismiss()"><i class="fa fa-remove"></i></span>
+    <h2 class="text-center" ng-if="inputCtrl.title" ng-bind="inputCtrl.title"></h2>
+    <div class="form-group text-center" ng-if="inputCtrl.text">
+        <p ng-bind="inputCtrl.text"></p>
+    </div>
+    <div class="form-group">
+        <input class="form-control text-center" type="text" ng-model="inputCtrl.value" autofocus placeholder="{{ inputCtrl.placeholder }}" required>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-danger" ng-class="{'col-xs-12' : !inputCtrl.cancel, 'col-xs-6' : inputCtrl.cancel}" ng-click="inputCtrl.dismiss()" ng-if="inputCtrl.cancel">
+            <span ng-bind="inputCtrl.cancel"></span>
+        </button>
+        <button type="submit" class="btn btn-dark" ng-class="{'col-xs-12' : !inputCtrl.cancel, 'col-xs-6' : inputCtrl.cancel}" ng-disabled="!inputCtrl.value">
+            <span ng-bind="inputCtrl.button"></span>
+        </button>
+    </div>
+</form>
+

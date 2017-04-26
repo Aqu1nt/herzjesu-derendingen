@@ -93,12 +93,14 @@ To see how it work see vspacing.css file (unminified)
 @import url('font-awesome.min.css');
 @import url('simple-line-icons.css');
 
-/* Import Google Fonts - 5 Fonts - Lato + Open Sans + Raleway + Montserrat + Show Into Light */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800);
-@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+/* Import Google Fonts - 5 Fonts - Roboto + Roboto Condensed + Raleway + Montserrat + Show Into Light */
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,700,900,300italic,400italic,700italic);*/
+/*@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);*/
+/*@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800);*/
+/*@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);*/
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+
 
 /* =============================================
 -------------------  1.General ---------------
@@ -119,7 +121,7 @@ html {
 }
 
 body {
-	font: 400 14px/1.6 'Lato', Verdana, sans-serif;
+	font: 400 14px/1.6 'Roboto', Verdana, sans-serif;
 	color: #505050;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1129,7 +1131,7 @@ textarea.form-control {
 label.input-desc {
 	font-size:14px;
 	font-weight: 700;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	text-transform: uppercase;
 	margin-bottom:7px;
 }
@@ -1998,7 +2000,7 @@ fieldset[disabled] .form-control {
 
 .progress-title {
 	margin-bottom:10px;
-	font:700 14px/1 'Open Sans', Verdana, sans-serif;
+	font:700 14px/1 'Roboto Condensed', Verdana, sans-serif;
 }
 
 .circle-progress-container  {
@@ -2312,7 +2314,7 @@ a.list-group-item:focus {
 
 .tooltip {
 	z-index:900;
-	font: 13px/1.4 'Open Sans', Verdana, sans-serif;
+	font: 13px/1.4 'Roboto Condensed', Verdana, sans-serif;
 }
 
 .tooltip.in {
@@ -2504,7 +2506,7 @@ a.list-group-item:focus {
 	border-radius: 3px;
 	background: #292929;
 	color: white;
-	font-family: 'Open Sans', sans-serif, Verdana;
+	font-family: 'Roboto Condensed', sans-serif, Verdana;
 	font-size: smaller;
 	padding: 2px 6px;
 }
@@ -2971,7 +2973,7 @@ a.list-group-item:focus {
 }
 
 .modal-header .close {
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	position: absolute;
 	right:-1px;
 	top:0;
@@ -3417,7 +3419,7 @@ a.list-group-item:focus {
 .label {
 	display: inline-block;
 	padding: 0 10px;
-	font:600 10px/1.6 'Open Sans', Verdana;
+	font:600 10px/1.6 'Roboto Condensed', Verdana;
 	color: #fff;
 	text-align: center;
 	border-radius: 0;
@@ -3752,7 +3754,7 @@ a.list-group-item:focus {
 }
 
 .navbar-top {
-	font:600 13px/38px 'Open Sans', Verdana;
+	font:600 13px/38px 'Roboto Condensed', Verdana;
 }
 
 .navbar-top.navbar-color .social-icon,
@@ -4118,7 +4120,7 @@ a.list-group-item:focus {
 	display:block;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	font:700 14px/20px 'Open Sans', Verdana, sans-serif;
+	font:700 14px/20px 'Roboto Condensed', Verdana, sans-serif;
 	text-transform: uppercase;
 }
 
@@ -4759,7 +4761,7 @@ a.list-group-item:focus {
 
 .cart-dropdown .product-name {
 	text-transform: uppercase;
-	font:700 13px/1.5 'Open Sans', Verdana;
+	font:700 13px/1.5 'Roboto Condensed', Verdana;
 	margin-bottom:7px;
 }
 
@@ -7374,7 +7376,7 @@ or the section with padding top more than header's height */
 	font-size: 18px;
 	font-weight: 700;
 	margin-top: 3px;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 }
 
 .carousel-tab .carousel-indicators li.active,
@@ -7530,7 +7532,7 @@ Landing Homepages --------------------*/
 	font-weight: 600;
 	font-size: 42px;
 	line-height: 1.3;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	margin-bottom: 20px;
 }
 
@@ -7785,7 +7787,7 @@ Onepage Homepages --------------------*/
 	letter-spacing: 3px;
 	color:#f4f4f4;
 	position: relative;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 }
 
 .section-title.normal,
@@ -7888,7 +7890,7 @@ Onepage Homepages --------------------*/
 
 .big-block h1,
 .big-block .h1 {
-	font:700 60px/1 'Open Sans', Verdana;
+	font:700 60px/1 'Roboto Condensed', Verdana;
 	letter-spacing: -0.4px;
 	margin-bottom: 18px;
 }
@@ -8236,7 +8238,7 @@ Onepage Homepages --------------------*/
 .pricing-table .pricing-list {
 	list-style: none;
 	text-align: center;
-	font:14px/22px 'Lato', sans-serif;
+	font:14px/22px 'Roboto', sans-serif;
 	border-top:1px dashed #eaeaea;
 	margin-bottom:0;
 }
@@ -8872,7 +8874,7 @@ Onepage Homepages --------------------*/
 
 .entry-simple .entry-title {
 	margin-bottom:15px;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	font-size:18px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -8891,7 +8893,7 @@ Onepage Homepages --------------------*/
 .entry-simple footer,
 .entry-simple footer a,
 .entry-simple .entry-label {
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	font-weight: 400;
 }
 
@@ -8995,7 +8997,7 @@ Onepage Homepages --------------------*/
 .about-widget-box header h5 {
 	color:#777;
 	font-size:14px;
-	font-family: 'Lato', Verdana;
+	font-family: 'Roboto', Verdana;
 	line-height: 1.4;
 }
 
@@ -9063,7 +9065,7 @@ Onepage Homepages --------------------*/
 
 .sidebar .widget .latest-posts-list h5, 
 .sidebar .widget .products-list h5 {
-	font-family: 'Open Sans', Verdana, sans-serif;
+	font-family: 'Roboto Condensed', Verdana, sans-serif;
 }
 
 .sidebar .widget .latest-posts-list li a,
@@ -9525,7 +9527,7 @@ Onepage Homepages --------------------*/
 .comments-list .comment-date {
 	font-size:12px;
 	font-weight: 700;
-	font-family: 'Lato', Verdana, sans-serif;
+	font-family: 'Roboto', Verdana, sans-serif;
 	margin-left:10px;
 }
 
@@ -9708,7 +9710,7 @@ Onepage Homepages --------------------*/
 }
 
 .timeline-section-date {
-	font:600 12px/26px 'Open Sans', Verdana, sans-serif;
+	font:600 12px/26px 'Roboto Condensed', Verdana, sans-serif;
 	letter-spacing: 0.3px;
 	display: block;
 	padding:0 12px;
@@ -10581,7 +10583,7 @@ label.error {
 }
 
 .product-title {
-	font:700 14px/1.5 'Open Sans', Verdana, sans-serif;
+	font:700 14px/1.5 'Roboto Condensed', Verdana, sans-serif;
 	margin-bottom:9px;
 	text-transform: uppercase;
 }
@@ -10630,7 +10632,7 @@ label.error {
 	position: absolute;
 	left:15px;
 	top:15px;
-	font:500 14px/1.5 'Open Sans', Verdana, sans-serif;
+	font:500 14px/1.5 'Roboto Condensed', Verdana, sans-serif;
 	color:#fff;
 	min-width:60px;
 	text-align: center;
@@ -10979,7 +10981,7 @@ label.error {
 .product-details .product-title {
 	font-size:24px;
 	line-height: 1.3;
-	font-family: 'Lato', Verdana;
+	font-family: 'Roboto', Verdana;
 	color:#4a4a4a;
 	font-weight: 700;
 	margin-top: 5px;
@@ -10995,7 +10997,7 @@ label.error {
 .product-details .product-cats a {
 	font-size:13px;
 	font-weight: 400;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	color:#9a9a9a;
 }
 
@@ -11272,7 +11274,7 @@ label.error {
 /* Category Sidebar */
 #category-widget a {
 	display:block;
-	font:600 12px/24px 'Open Sans', Verdana;
+	font:600 12px/24px 'Roboto Condensed', Verdana;
 	text-transform: uppercase;
 }
 
@@ -11570,7 +11572,7 @@ noUi-target,
 
 .filter-brand-list a {
 	display:block;
-	font:600 12px/24px 'Open Sans', Verdana, sans-serif;
+	font:600 12px/24px 'Roboto Condensed', Verdana, sans-serif;
 	color:#7e7e7e;
 	padding:2px 0;
 	text-transform: uppercase;
@@ -12092,7 +12094,7 @@ noUi-target,
 .checkout .panel-title {
 	font-size:18px;
 	line-height:30px;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'Roboto Condensed', Verdana;
 	text-transform: uppercase;
 	padding:8px 30px;
 	position: relative;
@@ -12352,7 +12354,7 @@ noUi-target,
 #portfolio-filter li a {
 	display:inline;
 	color:#515151;
-	font:700 13px/1 'Open Sans', Verdana, sans-serif;
+	font:700 13px/1 'Roboto Condensed', Verdana, sans-serif;
 	position: relative;
 	text-transform: uppercase;
 }
@@ -12490,7 +12492,7 @@ noUi-target,
 }
 
 .portfolio-title {
-	font:700 18px/1.5 'Open Sans', Verdana, sans-serif;
+	font:700 18px/1.5 'Roboto Condensed', Verdana, sans-serif;
 	margin-bottom:0;
 	letter-spacing: 0.2px;
 }
@@ -13002,7 +13004,7 @@ white - custom - dark of your color scheme */
 	text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.50);
 }
 .error-title.vertical {
-	font-family: 'Open Sans', Verdana, sans-serif;
+	font-family: 'Roboto Condensed', Verdana, sans-serif;
 }
 
 .error-subtitle {
@@ -13143,7 +13145,7 @@ white - custom - dark of your color scheme */
 
 #footer {
 	font-size:14px;
-	font-family: 'Lato', Verdana, sans-serif;
+	font-family: 'Roboto', Verdana, sans-serif;
 	background-color: #fff;
 	color:#505050;
 	border-top:1px solid #eaeaea;
@@ -13190,7 +13192,7 @@ white - custom - dark of your color scheme */
 }
 
 #footer .widget h4 {
-	font:700 15px/1.5 'Open Sans', Verdana, sans-serif;
+	font:700 15px/1.5 'Roboto Condensed', Verdana, sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 30px;
 	color:#4a4a4a;
@@ -13208,7 +13210,7 @@ white - custom - dark of your color scheme */
 
 .footer-logo {
 	display:inline-block;
-	font:700 30px/1.5 'Open Sans', Verdana, sans-serif;
+	font:700 30px/1.5 'Roboto Condensed', Verdana, sans-serif;
 	padding:3px 15px;
 	border:2px solid #505050;
 	color:#505050;

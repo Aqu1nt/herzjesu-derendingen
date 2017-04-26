@@ -1,5 +1,5 @@
-import {Inject} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Service, Inject} from "ng-next"
+
 
 /**
  * Class which is responsible for every interaction with
@@ -124,13 +124,4 @@ export class ApiService
         delete this.$http.defaults.headers.common[ApiService.AUTH_TOKEN_HEADER_NAME];
     }
 
-    /**
-     * Performs a full text search
-     * @param text the text to search
-     * @param [options]
-     */
-    search(text, options)
-    {
-        return this.get(`/search?q=${text}`, options);
-    }
 }

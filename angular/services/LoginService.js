@@ -1,5 +1,5 @@
-import {Inject} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Inject, Service} from "ng-next"
+
 
 @Service("LoginService")
 export class LoginService

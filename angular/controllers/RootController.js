@@ -1,4 +1,4 @@
-import {Controller} from "../utils/Angular2to1/Angular2to1"
+import {Controller} from "ng-next"
 
 @Controller
 export class RootController

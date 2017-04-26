@@ -1,5 +1,6 @@
-import {Inject, Init} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Init} from "ng-next"
+import {Service, Inject} from "ng-next"
+
 
 @Service("AuthenticationService")
 export class AuthenticationService
@@ -16,7 +17,9 @@ export class AuthenticationService
      */
     loggedIn = null;
 
-    constructor() { this.fetchIsLoggedIn(); }
+    constructor() {
+        this.fetchIsLoggedIn();
+    }
 
     /**
      * Fetches the loggedin status from the server

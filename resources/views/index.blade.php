@@ -4,11 +4,14 @@
     <head>
         <meta charset="utf-8">
         <title>Katholische Kirche Herz Jesu Derendingen</title>
-        <meta name="description" content="No Description yet">
+        <meta name="description" content="Website der katholischen Kirchgemeinde Herzjesu Derendingen, erfahren Sie mehr über uns oder treten Sie mit uns in Kontakt">
+        <meta name="keywords" content="herzjesu, derendingen, kirche, kirche derendingen, herzjesu derendingen, kirche solothurn, herzjesu solothurn, katholische kirche, katolische kirche derendingen" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 
         <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/magnific-popup.css">
@@ -17,17 +20,16 @@
         <link rel="stylesheet" id="color-scheme" href="css/colors/blue.css">
         <link rel="stylesheet" href="css/app.css">
 
-		<link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' /> 
-		<link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
-        
-        
+		<link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' />
+		<link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+
+
         <!-- Favicon and Apple Icons -->
-        <link rel="icon" type="image/png" href="images/icons/favicon.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="images/icons/faviconx57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/icons/faviconx72.png">
-        
+        <link rel="icon" type="image/png" href="/img/logo.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="/img/logo.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/img/logo.png">
     </head>
-    <body data-spy="scroll" data-target="#main-navbar-container">
+    <body data-spy="scroll" data-target="#main-navbar-container" >
     <div class="boss-loader-overlay"></div><!-- End .boss-loader-overlay -->
 
     <div ui-view></div>

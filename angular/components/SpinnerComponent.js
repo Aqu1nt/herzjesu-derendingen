@@ -1,4 +1,4 @@
-import {Component, Bind, View} from "../utils/Decorators"
+import {Bind, Component, View} from "ng-next"
 
 @Component("spinner")
 @View("<i class='fa fa-spinner' ng-show='$ctrl.trigger' ng-class='{\"fa-spin\" : $ctrl.trigger}'></i>")

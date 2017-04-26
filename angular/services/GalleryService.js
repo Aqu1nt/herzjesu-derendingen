@@ -1,5 +1,4 @@
-import {Inject} from "../utils/Decorators"
-import {Service} from "../utils/Angular2to1/Angular2to1"
+import {Inject, Service} from "ng-next"
 
 @Service("GalleryService")
 export class GalleryService
@@ -64,5 +63,15 @@ export class GalleryService
             url : this.ApiService.apiURL(`/galleries/${gallery.id}/images`),
             data : { file : images }
         });
+    }
+
+    /**
+     * Deletes the provided image
+     * @param gallery
+     * @param image
+     */
+    deleteImage(gallery, image)
+    {
+        return this.ApiService.delete(`/galleries/${gallery.id}/images/${image.id}`);
     }
 }

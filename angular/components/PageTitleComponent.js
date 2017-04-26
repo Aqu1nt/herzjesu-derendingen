@@ -1,4 +1,5 @@
-import {Component, Inject, Watch, On} from "../utils/Decorators"
+import {Watch, On, Inject, Component} from "ng-next"
+
 
 /**
  * Allows you to set the page title either with $rootScope.pageTitle = "..."

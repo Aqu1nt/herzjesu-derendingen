@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Image;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -83,10 +84,6 @@ class GalleryController extends Controller
             return;
         }
 
-        if (!file_exists("./uploads")) {
-            mkdir("./uploads");
-        }
-
         $createdImages = [];
 
         foreach ($images as $image) {
@@ -94,7 +91,7 @@ class GalleryController extends Controller
             $tokens = explode(".", $name);
             $ext = array_pop($tokens);
             $randomName = uniqid().".".$ext;
-            $image->move('./uploads', $randomName);
+            $image->move(ImageService::$DIRECTORY, $randomName);
 
             $createdImages[] = Image::create([
                 "gallery_id" => $id,
@@ -105,5 +102,11 @@ class GalleryController extends Controller
         }
 
         return response()->json(["images" => $createdImages]);
+    }
+
+    public function deleteImage($id, $imageId)
+    {
+        $success = Image::destroy($imageId);
+        return response()->json(["deleted" => !!$success], $success ? 200 : 404);
     }
 }

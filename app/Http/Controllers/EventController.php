@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 
 class EventController extends Controller
@@ -17,7 +18,12 @@ class EventController extends Controller
 
     public function index()
     {
-        return Event::where("start", ">=", time() * 1000)->orderBy('start', 'ASC')->get();
+        $events = Event::where("start", ">=", time() * 1000)->orderBy('start', 'ASC')->get();
+        $images = glob('img/random-images/*.*');
+        foreach ($events as $event) {
+            $event->img = $images[array_rand($images)];
+        }
+        return $events;
     }
 
     public function create(Request $request)

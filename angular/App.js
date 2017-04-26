@@ -1,6 +1,7 @@
 import "babel-polyfill"
 import "angular"
 import "jquery"
+import "./AngularModule"
 
 import 'owl.carousel';
 import "./plugins/angular-owl-carousel"
@@ -43,6 +44,9 @@ import "./services/EventModalService"
 import "./services/EventService"
 import "./services/InputService"
 import "./services/GalleryService"
+import "./services/ContactService"
+import "./services/PersonModalService"
+import "./services/PersonService"
 
 /* ==========================================
  *              Components

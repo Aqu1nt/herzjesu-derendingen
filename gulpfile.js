@@ -19,7 +19,7 @@ config.options.plugins = [
     "babel-plugin-transform-decorators-legacy"
 ];
 
-config.options.presets = ["es2015", "stage-0"];
+config.options.presets = ["es2015", "stage-2"];
 
 elixir(function(mix) {
     mix.sass('app.scss', undefined, {

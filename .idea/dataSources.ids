@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - herzjesu@localhost" uuid="5aa3a17b-0041-4782-9799-4a2390e97126">
+    <database-info product="MySQL" version="5.5.5-10.1.13-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="herzjesu">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="phpmyadmin"/>
+      <schema id="6" name="test"/>
+      <table id="7" parent="1" name="events"/>
+      <table id="8" parent="1" name="galleries"/>
+      <table id="9" parent="1" name="images"/>
+      <table id="10" parent="1" name="migrations"/>
+      <table id="11" parent="1" name="password_resets"/>
+      <table id="12" parent="1" name="users"/>
+      <column id="13" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="7" name="start">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="15" parent="7" name="end">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="16" parent="7" name="date">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+      </column>
+      <column id="17" parent="7" name="location">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="18" parent="7" name="desc">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="19" parent="7" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="20" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="21" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <key id="22" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="23" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="24" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="25" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="26" parent="8" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="27" parent="8" name="slug">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="28" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="29" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="30" parent="9" name="gallery_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+      </column>
+      <column id="31" parent="9" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="32" parent="9" name="image_path">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="33" parent="9" name="thumb_path">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="34" parent="9" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="35" parent="9" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="36" parent="9" name="images_gallery_id_foreign">
+        <columns>gallery_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="37" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="38" parent="9" name="images_gallery_id_foreign">
+        <columns>gallery_id</columns>
+        <ref-key>~.galleries.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="39" parent="10" name="migration">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="40" parent="10" name="batch">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="41" parent="11" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="42" parent="11" name="token">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="43" parent="11" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <index id="44" parent="11" name="password_resets_email_index">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="45" parent="11" name="password_resets_token_index">
+        <columns>token</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="46" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="47" parent="12" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="48" parent="12" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="49" parent="12" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)|0</data-type>
+      </column>
+      <column id="50" parent="12" name="remember_token">
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="51" parent="12" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="52" parent="12" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <index id="53" parent="12" name="users_email_unique">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="54" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="55" parent="12" name="users_email_unique">
+        <columns>email</columns>
+        <underlying-index>users_email_unique</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>

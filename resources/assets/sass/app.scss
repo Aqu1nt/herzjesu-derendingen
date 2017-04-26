@@ -1,10 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "custom";
-
 $boss-gray : #505050;
 $boss-light : #f2f2f2;
 $boss-text-gray : #9a9a9a;
 $boss-color : #1B778C;
+
+@import "custom";
 
 @import "angular-toastr/dist/angular-toastr.min";
 @import "angularjs-datepicker/dist/angular-datepicker.min";
@@ -14,6 +14,8 @@ $boss-color : #1B778C;
 
 @import "datepicker-theme";
 @import "common/uib-modal";
+@import "common/unite-gallery-component";
 @import "views/events-section";
 @import "views/gallery-section";
-
+@import "views/welcome-section";
+@import "views/person-section";

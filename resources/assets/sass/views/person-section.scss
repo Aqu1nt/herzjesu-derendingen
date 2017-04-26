@@ -1,0 +1,55 @@
+.person-modal-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+    box-shadow: rgba(50,50,50,0.1) 2px 2px 5px 2px;
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+
+    &:hover {
+      box-shadow: rgba(50,50,50,0.3) 2px 2px 5px 2px;
+    }
+  }
+}
+
+.people-section {
+  pre {
+    b, strong {
+      font-weight: 700;
+    }
+
+    font-family: "Roboto Light";
+    font-size: 15px;
+    line-height: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .jumbotron {
+    border-radius: 0;
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px;
+    background-color: lighten($boss-gray, 0%);
+    * {
+      color: #f3f3f3;
+    }
+  }
+
+
+  .people-wrapper {
+    position: relative;
+
+    .edit-person {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: none;
+      border: none;
+    }
+  }
+}
